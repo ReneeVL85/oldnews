@@ -21,6 +21,10 @@ class NewsItemsController < ApplicationController
   def edit
   end
 
+  def news_item_params
+  params.require(:news_item).permit(:title, :sub_header, :content, :image)
+  end
+
   # POST /news_items
   # POST /news_items.json
   def create
